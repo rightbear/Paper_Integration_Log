@@ -1,0 +1,262 @@
+test@ubuntu:~/OSC_L2/bin/ric_stub$ sudo ./ric_stub
+
+Creating thread here /home/test/OSC_L2/src/mt/mt_ss.c 3701
+
+INFO  --> RIC : Starting RIC_STUB
+INFO  --> RIC : Reading RIC configurations
+INFO   -->  SCTP : Connecting
+INFO   -->  SCTP : Connection established
+INFO  -->  SCTP : Polling started at RIC
+
+INFO  -->  E2AP : Received E2AP message buffer
+msg: qlen: 0001 mlen: 0020   00-->00 region: 01
+dat: 00 01 00 10 00 00 01 00 03 00 09 00 64 96 02 50 ............d..P
+     00 00 00 01                                     ....
+     
+DEBUG  -->  E2AP : Received flat buffer to be decoded : 010100010309064ffffff962500001
+<E2AP-PDU>
+    <initiatingMessage>
+        <procedureCode>1</procedureCode>
+        <criticality><reject/></criticality>
+        <value>
+            <E2setupRequest>
+                <protocolIEs>
+                    <E2setupRequestIEs>
+                        <id>3</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <GlobalE2node-ID>
+                                <gNB>
+                                    <global-gNB-ID>
+                                        <plmn-id>64 96 02</plmn-id>
+                                        <gnb-id>
+                                            <gnb-ID>
+                                                00000000000000000000000000000001
+                                            </gnb-ID>
+                                        </gnb-id>
+                                    </global-gNB-ID>
+                                </gNB>
+                            </GlobalE2node-ID>
+                        </value>
+                    </E2setupRequestIEs>
+                </protocolIEs>
+            </E2setupRequest>
+        </value>
+    </initiatingMessage>
+</E2AP-PDU>
+
+INFO  -->  E2AP : E2 setup request received
+INFO   -->  E2AP : Building E2 Setup Response
+<E2AP-PDU>
+    <successfulOutcome>
+        <procedureCode>1</procedureCode>
+        <criticality><reject/></criticality>
+        <value>
+            <E2setupResponse>
+                <protocolIEs>
+                    <E2setupResponseIEs>
+                        <id>4</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <GlobalRIC-ID>
+                                <pLMN-Identity>13 41 08</pLMN-Identity>
+                                <ric-ID>
+                                    00000000000000000001
+                                </ric-ID>
+                            </GlobalRIC-ID>
+                        </value>
+                    </E2setupResponseIEs>
+                </protocolIEs>
+            </E2setupResponse>
+        </value>
+    </successfulOutcome>
+</E2AP-PDU>
+
+DEBUG  -->  E2AP : Created APER encoded buffer for E2SetupResponse
+2010e00104070134180010
+msg: qlen: 0001 mlen: 0018   00-->00 region: 01
+dat: 20 01 00 0e 00 00 01 00 04 00 07 00 13 41 08 00  ............A..
+     00 10                                           ..
+     
+INFO   -->  E2AP : Building RIC Subscription Request
+<E2AP-PDU>
+    <initiatingMessage>
+        <procedureCode>8</procedureCode>
+        <criticality><reject/></criticality>
+        <value>
+            <RICsubscriptionRequest>
+                <protocolIEs>
+                    <RICsubscriptionRequest-IEs>
+                        <id>29</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICrequestID>
+                                <ricRequestorID>1</ricRequestorID>
+                                <ricInstanceID>1</ricInstanceID>
+                            </RICrequestID>
+                        </value>
+                    </RICsubscriptionRequest-IEs>
+                    <RICsubscriptionRequest-IEs>
+                        <id>5</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RANfunctionID>1</RANfunctionID>
+                        </value>
+                    </RICsubscriptionRequest-IEs>
+                    <RICsubscriptionRequest-IEs>
+                        <id>30</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICsubscriptionDetails>
+                                <ricEventTriggerDefinition>13 41 08</ricEventTriggerDefinition>
+                                <ricAction-ToBeSetup-List>
+                                    <ProtocolIE-SingleContainerE2>
+                                        <id>19</id>
+                                        <criticality><ignore/></criticality>
+                                        <value>
+                                            <RICaction-ToBeSetup-Item>
+                                                <ricActionID>0</ricActionID>
+                                                <ricActionType><report/></ricActionType>
+                                            </RICaction-ToBeSetup-Item>
+                                        </value>
+                                    </ProtocolIE-SingleContainerE2>
+                                </ricAction-ToBeSetup-List>
+                            </RICsubscriptionDetails>
+                        </value>
+                    </RICsubscriptionRequest-IEs>
+                </protocolIEs>
+            </RICsubscriptionRequest>
+        </value>
+    </initiatingMessage>
+</E2AP-PDU>
+
+DEBUG  -->  E2AP : Created APER encoded buffer for RicSubscriptionRequest
+0802300301d050010105020101e0d03134180013403000
+msg: qlen: 0001 mlen: 0039   00-->00 region: 01
+dat: 00 08 00 23 00 00 03 00 1d 00 05 00 00 01 00 01 ...#............
+     00 05 00 02 00 01 00 1e 00 0d 00 03 13 41 08 00 .............A..
+     00 13 40 03 00 00 00                            ..@....
+     
+INFO  -->  E2AP : Received E2AP message buffer
+msg: qlen: 0001 mlen: 0033   00-->00 region: 01
+dat: 20 08 00 1d 00 00 03 00 1d 00 05 00 00 01 00 01  ...............
+     00 05 00 02 00 01 00 11 00 07 00 00 0e 00 02 00 ................
+     01                                              .
+     
+DEBUG  -->  E2AP : Received flat buffer to be decoded : 20801d00301d05001010502010110700e0201
+<E2AP-PDU>
+    <successfulOutcome>
+        <procedureCode>8</procedureCode>
+        <criticality><reject/></criticality>
+        <value>
+            <RICsubscriptionResponse>
+                <protocolIEs>
+                    <RICsubscriptionResponse-IEs>
+                        <id>29</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICrequestID>
+                                <ricRequestorID>1</ricRequestorID>
+                                <ricInstanceID>1</ricInstanceID>
+                            </RICrequestID>
+                        </value>
+                    </RICsubscriptionResponse-IEs>
+                    <RICsubscriptionResponse-IEs>
+                        <id>5</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RANfunctionID>1</RANfunctionID>
+                        </value>
+                    </RICsubscriptionResponse-IEs>
+                    <RICsubscriptionResponse-IEs>
+                        <id>17</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICaction-Admitted-List>
+                                <ProtocolIE-SingleContainerE2>
+                                    <id>14</id>
+                                    <criticality><reject/></criticality>
+                                    <value>
+                                        <RICaction-Admitted-Item>
+                                            <ricActionID>1</ricActionID>
+                                        </RICaction-Admitted-Item>
+                                    </value>
+                                </ProtocolIE-SingleContainerE2>
+                            </RICaction-Admitted-List>
+                        </value>
+                    </RICsubscriptionResponse-IEs>
+                </protocolIEs>
+            </RICsubscriptionResponse>
+        </value>
+    </successfulOutcome>
+</E2AP-PDU>
+
+INFO  -->  E2AP : RICsubscriptionResponse Msg Acknowledged
+INFO  -->  E2AP : Received E2AP message buffer
+msg: qlen: 0001 mlen: 0048   00-->00 region: 01
+dat: 00 05 00 2c 00 00 06 00 1d 00 05 00 00 01 00 01 ...,............
+     00 05 00 02 00 01 00 0f 00 01 00 00 1c 00 01 00 ................
+     00 19 00 04 03 64 96 02 00 1a 00 04 03 64 96 02 .....d.......d..
+     
+DEBUG  -->  E2AP : Received flat buffer to be decoded : 0502c00601d05001010502010f01001c01001904364ffffff96201a04364ffffff962
+<E2AP-PDU>
+    <initiatingMessage>
+        <procedureCode>5</procedureCode>
+        <criticality><reject/></criticality>
+        <value>
+            <RICindication>
+                <protocolIEs>
+                    <RICindication-IEs>
+                        <id>29</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICrequestID>
+                                <ricRequestorID>1</ricRequestorID>
+                                <ricInstanceID>1</ricInstanceID>
+                            </RICrequestID>
+                        </value>
+                    </RICindication-IEs>
+                    <RICindication-IEs>
+                        <id>5</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RANfunctionID>1</RANfunctionID>
+                        </value>
+                    </RICindication-IEs>
+                    <RICindication-IEs>
+                        <id>15</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICactionID>0</RICactionID>
+                        </value>
+                    </RICindication-IEs>
+                    <RICindication-IEs>
+                        <id>28</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICindicationType><report/></RICindicationType>
+                        </value>
+                    </RICindication-IEs>
+                    <RICindication-IEs>
+                        <id>25</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICindicationHeader>64 96 02</RICindicationHeader>
+                        </value>
+                    </RICindication-IEs>
+                    <RICindication-IEs>
+                        <id>26</id>
+                        <criticality><reject/></criticality>
+                        <value>
+                            <RICindicationMessage>64 96 02</RICindicationMessage>
+                        </value>
+                    </RICindication-IEs>
+                </protocolIEs>
+            </RICindication>
+        </value>
+    </initiatingMessage>
+</E2AP-PDU>
+
+INFO  -->  E2AP : RIC Indication Acknowledged
+INFO   -->  SCTP : Shutdown Event notification received
+
