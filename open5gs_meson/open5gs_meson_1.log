@@ -1,0 +1,325 @@
+test@ubuntu:~/open5gs/build$ meson test -v
+ninja: Entering directory `/home/test/open5gs/build'
+ninja: no work to do.
+list-test           : SUCCESS
+pool-test           : SUCCESS
+strings-test        : SUCCESS
+time-test           : SUCCESS
+conv-test           : SUCCESS
+log-test            : SUCCESS
+pkbuf-test          : SUCCESS
+memory-test         : SUCCESS
+rbtree-test         : SUCCESS
+timer-test          : SUCCESS
+thread-test         : SUCCESS
+socket-test         : SUCCESS
+queue-test          : SUCCESS
+poll-test           : SUCCESS
+tlv-test            : SUCCESS
+fsm-test            : SUCCESS
+hash-test           : SUCCESS
+uuid-test           : SUCCESS
+All tests passed.
+ 1/13 open5gs:unit / core                     OK       6.98 s
+aes-test            : SUCCESS
+sha-test            : SUCCESS
+base64-test         : SUCCESS
+ecies-test          : SUCCESS
+All tests passed.
+ 2/13 open5gs:unit / crypt                    OK       0.12 s
+sctp-test           : SUCCESS
+All tests passed.
+ 3/13 open5gs:app / sctp                      OK       0.01 s
+proto-message-test  : SUCCESS
+s1ap-message-test   : SUCCESS
+nas-message-test    : SUCCESS
+gtp-message-test    : SUCCESS
+ngap-message-test   : SUCCESS
+sbi-message-test    : SUCCESS
+security-test       : SUCCESS
+crash-test          : SUCCESS
+All tests passed.
+ 4/13 open5gs:unit / unit                     OK       0.04 s
+03/31 23:58:11.670: [sock] ERROR: socket bind(2) [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:11.670: [sock] ERROR: tcp_server() [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-tcp.c:74)
+03/31 23:58:11.670: [sbi] ERROR: Cannot start SBI server (../lib/sbi/nghttp2-server.c:389)
+03/31 23:58:11.671: [app] ERROR: Failed to initialize NRF (../src/nrf/app.c:28)
+03/31 23:58:11.671: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:11.673: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:11.673: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/registration/registration(+0x49a3a) [0x563d63f5ea3a]
+/home/test/open5gs/build/tests/registration/../../lib/core/libogscore.so.2(+0x105e8) [0x7f120fd085e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f120d1ce6db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f120cef761f]
+ 5/13 open5gs:5gc / registration              FAIL     0.17 s
+03/31 23:58:11.841: [sock] ERROR: socket bind(2) [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:11.841: [sock] ERROR: tcp_server() [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-tcp.c:74)
+03/31 23:58:11.841: [sbi] ERROR: Cannot start SBI server (../lib/sbi/nghttp2-server.c:389)
+03/31 23:58:11.841: [app] ERROR: Failed to initialize NRF (../src/nrf/app.c:28)
+03/31 23:58:11.841: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:11.843: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:11.843: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/vonr/vonr(+0x43403) [0x55ccad437403]
+/home/test/open5gs/build/tests/vonr/../../lib/core/libogscore.so.2(+0x105e8) [0x7f311c0575e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f3118c1c6db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f311894561f]
+ 6/13 open5gs:5gc / vonr                      FAIL     0.17 s
+03/31 23:58:12.008: [sock] ERROR: socket bind(2) [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:12.008: [sock] ERROR: tcp_server() [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-tcp.c:74)
+03/31 23:58:12.008: [sbi] ERROR: Cannot start SBI server (../lib/sbi/nghttp2-server.c:389)
+03/31 23:58:12.008: [app] ERROR: Failed to initialize NRF (../src/nrf/app.c:28)
+03/31 23:58:12.008: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:12.010: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:12.010: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/slice/slice(+0x2c20d) [0x55f0611ab20d]
+/home/test/open5gs/build/tests/slice/../../lib/core/libogscore.so.2(+0x105e8) [0x7f83186625e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f8315b286db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f831585161f]
+ 7/13 open5gs:5gc / slice                     FAIL     0.17 s
+03/31 23:58:12.194: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.194: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.194: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.194: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.194: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.249: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.249: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.249: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.249: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.249: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.305: [hss] FATAL: hss_fd_init: Assertion `rv == 0' failed. (../src/hss/hss-fd-path.c:41)
+03/31 23:58:12.305: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x1a61d) [0x5607893a461d]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6f66) [0x560789390f66]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x654b) [0x56078939054b]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6dca) [0x560789390dca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7f64fdc0fc87]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x645a) [0x56078939045a]
+03/31 23:58:12.366: [pcrf] FATAL: pcrf_fd_init: Assertion `rv == 0' failed. (../src/pcrf/pcrf-fd-path.c:37)
+03/31 23:58:12.366: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x6696) [0x558be4888696]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x48ec) [0x558be48868ec]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3ecb) [0x558be4885ecb]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x474a) [0x558be488674a]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7f691e0f0c87]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3dda) [0x558be4885dda]
+03/31 23:58:12.515: [sock] ERROR: socket bind(2) [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:12.532: [sock] ERROR: udp_server() [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-udp.c:69)
+03/31 23:58:12.532: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+03/31 23:58:12.533: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:12.553: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:12.553: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/attach/attach(+0x36722) [0x559c5fc03722]
+/home/test/open5gs/build/tests/attach/../../lib/core/libogscore.so.2(+0x105e8) [0x7fc7f9ae65e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7fc7f73786db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7fc7f70a161f]
+ 8/13 open5gs:epc / attach                    FAIL     0.57 s
+03/31 23:58:12.760: [diam] ERROR: pid:PSM/hss.localdomain in p_psm_th@p_psm.c:630: ERROR: in '(fd_p_ce_msgrcv(&msg, (hdr->msg_flags & 0x80), peer))' :	Invalid argument
+ ((null):0)
+03/31 23:58:12.761: [diam] ERROR: pid:PSM/pcrf.localdomain in p_psm_th@p_psm.c:630: ERROR: in '(fd_p_ce_msgrcv(&msg, (hdr->msg_flags & 0x80), peer))' :	Invalid argument
+ ((null):0)
+03/31 23:58:12.809: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.809: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.809: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.809: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.809: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.850: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.850: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:12.850: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.850: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.850: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:12.920: [hss] FATAL: hss_fd_init: Assertion `rv == 0' failed. (../src/hss/hss-fd-path.c:41)
+03/31 23:58:12.920: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x1a61d) [0x560c68f5f61d]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6f66) [0x560c68f4bf66]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x654b) [0x560c68f4b54b]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6dca) [0x560c68f4bdca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7f8d2b42dc87]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x645a) [0x560c68f4b45a]
+03/31 23:58:12.961: [pcrf] FATAL: pcrf_fd_init: Assertion `rv == 0' failed. (../src/pcrf/pcrf-fd-path.c:37)
+03/31 23:58:12.961: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x6696) [0x55b141a37696]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x48ec) [0x55b141a358ec]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3ecb) [0x55b141a34ecb]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x474a) [0x55b141a3574a]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7fe3103fcc87]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3dda) [0x55b141a34dda]
+03/31 23:58:13.075: [sock] ERROR: socket bind(2) [127.0.0.6]:8805 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:13.075: [sock] ERROR: udp_server() [127.0.0.6]:8805 failed (98:Address already in use) (../lib/core/ogs-udp.c:69)
+03/31 23:58:13.075: [app] ERROR: Failed to initialize SGW-U (../src/sgwu/app.c:28)
+03/31 23:58:13.075: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:13.080: [sock] ERROR: socket bind(2) [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:13.080: [sock] ERROR: udp_server() [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-udp.c:69)
+03/31 23:58:13.081: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+03/31 23:58:13.081: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:13.083: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:13.083: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/volte/volte(+0x4e998) [0x55aca9c05998]
+/home/test/open5gs/build/tests/volte/../../lib/core/libogscore.so.2(+0x105e8) [0x7f6d2541f5e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f6d2219d6db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f6d21ec661f]
+ 9/13 open5gs:epc / volte                     FAIL     0.52 s
+03/31 23:58:13.307: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:13.307: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:13.307: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.307: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.307: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.350: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:13.350: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:13.350: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.350: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.350: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:13.419: [hss] FATAL: hss_fd_init: Assertion `rv == 0' failed. (../src/hss/hss-fd-path.c:41)
+03/31 23:58:13.419: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x1a61d) [0x5645ca2f061d]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6f66) [0x5645ca2dcf66]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x654b) [0x5645ca2dc54b]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6dca) [0x5645ca2dcdca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7f84aba34c87]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x645a) [0x5645ca2dc45a]
+03/31 23:58:13.462: [pcrf] FATAL: pcrf_fd_init: Assertion `rv == 0' failed. (../src/pcrf/pcrf-fd-path.c:37)
+03/31 23:58:13.462: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x6696) [0x55a1a8529696]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x48ec) [0x55a1a85278ec]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3ecb) [0x55a1a8526ecb]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x474a) [0x55a1a852774a]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7effd16e4c87]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3dda) [0x55a1a8526dda]
+03/31 23:58:13.520: [sock] ERROR: socket bind(2) [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:13.520: [sock] ERROR: udp_server() [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-udp.c:69)
+03/31 23:58:13.520: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+03/31 23:58:13.520: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:13.528: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:13.529: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/csfb/csfb(+0x25db5) [0x5592233d5db5]
+/home/test/open5gs/build/tests/csfb/../../lib/core/libogscore.so.2(+0x105e8) [0x7f66d1a985e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f66cf32a6db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f66cf05361f]
+10/13 open5gs:epc / csfb                      FAIL     0.52 s
+03/31 23:58:13.801: [sock] ERROR: socket bind(2) [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:13.801: [sock] ERROR: tcp_server() [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-tcp.c:74)
+03/31 23:58:13.801: [sbi] ERROR: Cannot start SBI server (../lib/sbi/nghttp2-server.c:389)
+03/31 23:58:13.801: [app] ERROR: Failed to initialize NRF (../src/nrf/app.c:28)
+03/31 23:58:13.801: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:13.804: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:13.804: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/310014/310014(+0x1bf3f) [0x56550f927f3f]
+/home/test/open5gs/build/tests/310014/../../lib/core/libogscore.so.2(+0x105e8) [0x7fe37eeba5e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7fe37c5466db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7fe37c26f61f]
+11/13 open5gs:app / 310014                    FAIL     0.22 s
+03/31 23:58:14.020: [sock] ERROR: socket bind(2) [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:14.020: [sock] ERROR: tcp_server() [127.0.0.10]:7777 failed (98:Address already in use) (../lib/core/ogs-tcp.c:74)
+03/31 23:58:14.020: [sbi] ERROR: Cannot start SBI server (../lib/sbi/nghttp2-server.c:389)
+03/31 23:58:14.020: [app] ERROR: Failed to initialize NRF (../src/nrf/app.c:28)
+03/31 23:58:14.020: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:14.022: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:14.022: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/handover/handover(+0x31fae) [0x561e2ae79fae]
+/home/test/open5gs/build/tests/handover/../../lib/core/libogscore.so.2(+0x105e8) [0x7fd4bc6405e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7fd4b96f26db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7fd4b941b61f]
+12/13 open5gs:app / handover                  FAIL     0.17 s
+03/31 23:58:14.201: [diam] ERROR: pid:PSM/smf.localdomain in p_psm_th@p_psm.c:630: ERROR: in '(fd_p_ce_msgrcv(&msg, (hdr->msg_flags & 0x80), peer))' :	Invalid argument
+ ((null):0)
+03/31 23:58:14.201: [diam] ERROR: pid:PSM/hss.localdomain in p_psm_th@p_psm.c:630: ERROR: in '(fd_p_ce_msgrcv(&msg, (hdr->msg_flags & 0x80), peer))' :	Invalid argument
+ ((null):0)
+03/31 23:58:14.243: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:14.243: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:14.243: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.243: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.243: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.290: [diam] ERROR: pid:Main in fd_sctp_create_bind_server@sctp.c:883: ERROR: in '(sctp_bindx(*sock, sar, count, 0x01))' :	Address already in use
+ ((null):0)
+03/31 23:58:14.290: [diam] ERROR: pid:Main in fd_cnx_serv_sctp@cnxctx.c:181: ERROR: in '(fd_sctp_create_bind_server( &cnx->cc_socket, cnx->cc_family, ep_list, port ))' :	Address already in use
+ ((null):0)
+03/31 23:58:14.290: [diam] ERROR: pid:Main in fd_servers_start@server.c:355: ERROR: in '(s->conn = fd_cnx_serv_sctp(fd_g_config->cnf_port, empty_conf_ep ? ((void *)0) : &fd_g_config->cnf_endpoints))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.290: [diam] ERROR: pid:Main in fd_core_start_int@core.c:300: ERROR: in '((fd_servers_start()))' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.290: [diam] ERROR: pid:Main in ogs_diam_start@init.c:71: ERROR: in '(fd_core_start())' :	Transport endpoint is not connected
+ ((null):0)
+03/31 23:58:14.353: [hss] FATAL: hss_fd_init: Assertion `rv == 0' failed. (../src/hss/hss-fd-path.c:41)
+03/31 23:58:14.353: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x1a61d) [0x561d5d18461d]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6f66) [0x561d5d170f66]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x654b) [0x561d5d17054b]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x6dca) [0x561d5d170dca]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7fc6b5c28c87]
+/home/test/open5gs/build/src/hss/open5gs-hssd(+0x645a) [0x561d5d17045a]
+03/31 23:58:14.407: [pcrf] FATAL: pcrf_fd_init: Assertion `rv == 0' failed. (../src/pcrf/pcrf-fd-path.c:37)
+03/31 23:58:14.407: [core] FATAL: backtrace() returned 7 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x6696) [0x56397a6dd696]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x48ec) [0x56397a6db8ec]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3ecb) [0x56397a6daecb]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x474a) [0x56397a6db74a]
+/lib/x86_64-linux-gnu/libc.so.6(__libc_start_main+0xe7) [0x7f1e2940cc87]
+/home/test/open5gs/build/src/pcrf/open5gs-pcrfd(+0x3dda) [0x56397a6dadda]
+03/31 23:58:14.461: [sock] ERROR: socket bind(2) [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-socket.c:116)
+03/31 23:58:14.461: [sock] ERROR: udp_server() [127.0.0.7]:8805 failed (98:Address already in use) (../lib/core/ogs-udp.c:69)
+03/31 23:58:14.461: [app] ERROR: Failed to initialize UPF (../src/upf/app.c:28)
+03/31 23:58:14.461: [app] FATAL: Open5GS initialization failed. Aborted (../src/main.c:219)
+03/31 23:58:14.470: [core] FATAL: child_main: Assertion `out_return_code == 0' failed. (../tests/common/application.c:109)
+03/31 23:58:14.471: [core] FATAL: backtrace() returned 5 addresses (../lib/core/ogs-abort.c:37)
+/home/test/open5gs/build/tests/non3gpp/non3gpp(+0x2b5cf) [0x55755c93c5cf]
+/home/test/open5gs/build/tests/non3gpp/../../lib/core/libogscore.so.2(+0x105e8) [0x7f450caa95e8]
+/lib/x86_64-linux-gnu/libpthread.so.0(+0x76db) [0x7f450920b6db]
+/lib/x86_64-linux-gnu/libc.so.6(clone+0x3f) [0x7f4508f3461f]
+13/13 open5gs:epc / non3gpp                   FAIL     0.52 s
+
+OK:         4
+FAIL:       9
+SKIP:       0
+TIMEOUT:    0
+
+test@ubuntu:~/open5gs/build$ sudo netstat -nlp | grep 7777
+tcp        0      0 127.0.0.5:7777          0.0.0.0:*               LISTEN      37199/open5gs-amfd  
+tcp        0      0 127.0.0.4:7777          0.0.0.0:*               LISTEN      37197/open5gs-smfd  
+tcp        0      0 127.0.0.13:7777         0.0.0.0:*               LISTEN      37208/open5gs-pcfd  
+tcp        0      0 127.0.0.15:7777         0.0.0.0:*               LISTEN      37212/open5gs-bsfd  
+tcp        0      0 127.0.0.14:7777         0.0.0.0:*               LISTEN      37210/open5gs-nssfd 
+tcp        0      0 127.0.0.20:7777         0.0.0.0:*               LISTEN      37214/open5gs-udrd  
+tcp        0      0 127.0.0.12:7777         0.0.0.0:*               LISTEN      37206/open5gs-udmd  
+tcp        0      0 127.0.0.11:7777         0.0.0.0:*               LISTEN      37201/open5gs-ausfd 
+tcp        0      0 127.0.0.200:7777        0.0.0.0:*               LISTEN      37192/open5gs-scpd  
+tcp        0      0 127.0.0.10:7777         0.0.0.0:*               LISTEN      37189/open5gs-nrfd  
+test@ubuntu:~/open5gs/build$ sudo netstat -nlp | grep 8805
+udp        0      0 127.0.0.6:8805          0.0.0.0:*                           37361/open5gs-sgwud 
+udp        0      0 127.0.0.3:8805          0.0.0.0:*                           37393/open5gs-sgwcd 
+udp        0      0 127.0.0.4:8805          0.0.0.0:*                           37197/open5gs-smfd  
+udp        0      0 127.0.0.7:8805          0.0.0.0:*                           37195/open5gs-upfd  
+test@ubuntu:~/open5gs/build$ sudo kill -9 37199 37197 37208 37212 37210 37214 37206 37201 37192 37189 37361 37393 37197 37195
