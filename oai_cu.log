@@ -16,6 +16,10 @@ sh: 1: cannot create /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq: Dire
 sh: 1: cannot create /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq: Directory nonexistent
 sh: 1: cannot create /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq: Directory nonexistent
 sh: 1: cannot create /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq: Directory nonexistent
 [HW]   Can't set cpu frequency
 Reading in command-line options
 [LIBCONFIG] (root): 33/33 parameters successfully set, (29 to default value)
@@ -32,7 +36,7 @@ Reading in command-line options
 Configuration: nb_rrc_inst 1, nb_nr_L1_inst 0, nb_ru 0
 [LIBCONFIG] TTracer: 4/4 parameters successfully set, (4 to default value)
 configuring for RAU/RRU
-CPU Freq is 3.408889 
+CPU Freq is 3.408383 
 [ITTI]   Starting itti queue: TASK_UNKNOWN as task 0
 [ITTI]   Starting itti queue: TASK_TIMER as task 1
 [ITTI]   Starting itti queue: TASK_L2L1 as task 2
@@ -79,30 +83,30 @@ CPU Freq is 3.408889
 [ITTI]   Starting itti queue: TASK_NAS_NRUE as task 43
 [LIBCONFIG] opt: 3/3 parameters successfully set, (3 to default value)
 [OPT]   OPT disabled
-[HW]   Version: Branch: master Abrev. Hash: 11aa020 Date: Mon Aug 15 16:26:38 2022 +0800
-[SCTP]   Starting SCTP layer
+[HW]   Version: Branch: main Abrev. Hash: 2be5284d Date: Sun Mar 31 09:45:03 2024 -0700
 [ITTI]   Created Posix thread TASK_SCTP
+[SCTP]   Starting SCTP layer
 [LIBCONFIG] eNBs.[0]: 1/1 parameters successfully set, (1 to default value)
 [LIBCONFIG] gNBs.[0]: 1/1 parameters successfully set, (1 to default value)
 [X2AP]   X2AP is disabled.
 [LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
 [NGAP]   Configuration in the file: ens33.
 [NGAP]   Configuration in the file: 192.168.237.129/24.
-[ITTI]   Created Posix thread TASK_NGAP
 [NGAP]   Starting NGAP layer
+[ITTI]   Created Posix thread TASK_NGAP
 [PHY]   gNB_app_task() Task ready initialize structures
 [ITTI]   Created Posix thread TASK_GNB_APP
 [NR_RRC]   Creating NR RRC gNB Task
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (9 to default value)
 [NR_PHY]   PRB blacklist 
-[NR_PHY]   RC.gNB = 0x7fa35c000c90
+[NR_PHY]   RC.gNB = 0x7f96a4000c90
 [LIBCONFIG] list L1s not found in config file ../../../ci-scripts/conf_files/cu.band66.tm1.106PRB.usrpb210.conf 
-[PHY]   No L1s configuration found[PHY]   RC.gNB[0] = 0x7fa3666f0010
+[PHY]   No L1s configuration found[PHY]   RC.gNB[0] = 0x7f96ac7a5010
 [PHY]   gNB_app_task() RC.nb_nr_L1_inst:0
 [GNB_APP]   Allocating gNB_RRC_INST for 1 instances
-[PHY]   gNB_app_task() RC.nb_nr_inst:1 RC.nrrrc:0x7fa35c002610
-[PHY]   gNB_app_task() Creating RRC instance RC.nrrrc[0]:0x7fa35c002630 (1 of 1)
+[PHY]   gNB_app_task() RC.nb_nr_inst:1 RC.nrrrc:0x7f96a4002610
+[PHY]   gNB_app_task() Creating RRC instance RC.nrrrc[0]:0x7f96a4002630 (1 of 1)
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (9 to default value)
 [LIBCONFIG] gNBs.[0].pdcch_ConfigSIB1.[0]: 2/2 parameters successfully set, (0 to default value)
@@ -138,14 +142,26 @@ NRRRC 0: Southbound Transport f1
 [GNB_APP]   Sending configuration message to NR_RRC task
 [PDCP]   pdcp init,usegtp 
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
+[ITTI]   Created Posix thread TASK_RRC_GNB
+[NR_RRC]   Entering main loop of NR_RRC message task
+[NR_RRC]   Received message NRRRC_CONFIGURATION_REQ
+[NR_RRC]   [gNB 0] Received NRRRC_CONFIGURATION_REQ : 0x7f96a4003c80
+[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Init...
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (9 to default value)
 [LIBCONFIG] gNBs.[0].plmn_list.[0]: 3/3 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0].plmn_list.[0].snssaiList.[0]: 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0].plmn_list.[0].snssaiList.[1]: 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0].amf_ip_address.[0]: 4/4 parameters successfully set, (0 to default value)
+[PHY]   not found same deltaf_raster == scs_khz, use only band and last deltaf_raster 
+[NR_MAC]   NR band duplex spacing is -400000 KHz (nr_bandtable[28].band = 66)
 [LIBCONFIG] gNBs.[0].SCTP: 2/2 parameters successfully set, (0 to default value)
+[NR_MAC]   NR band 66, duplex mode FDD, duplex spacing = -400000 KHz
+[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Checking release 
+[NR_RRC]   do_SIB23_NR, size 9 
+ [NR_RRC]   Done init_NR_SI
 [LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
 [GNB_APP]   default drx 0
+[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] gNB:OPENAIR NR RRC IN....
 [GTPU]   Configuring GTPu
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
@@ -156,30 +172,18 @@ NRRRC 0: Southbound Transport f1
 [NGAP]   [gNB 0] check the amf registration state
 [SCTP]   sctp_bindx SCTP_BINDX_ADD_ADDR socket bound to : 192.168.237.129
 [SCTP]   Converted ipv4 address 127.0.0.5 to network type
-[SCTP]   connectx assoc_id  83 in progress..., used 1 addresses
-[SCTP]   Inserted new descriptor for sd 94 in list, nb elements 1, assoc_id 83
-[NR_RRC]   Entering main loop of NR_RRC message task
-[ITTI]   Created Posix thread TASK_CU_F1
+[SCTP]   connectx assoc_id  437 in progress..., used 1 addresses
+[SCTP]   Inserted new descriptor for sd 94 in list, nb elements 1, assoc_id 437
+[GTPU]   Initializing UDP for local address 192.168.237.129 with port 2152
 [F1AP]   Starting F1AP at CU
+[ITTI]   Created Posix thread TASK_CU_F1
 [F1AP]   F1AP_CU_SCTP_REQ(create socket)
-[NR_RRC]   Received message NRRRC_CONFIGURATION_REQ
-[NR_RRC]   [gNB 0] Received NRRRC_CONFIGURATION_REQ : 0x7fa35c003c80
-[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Init...
-[ITTI]   Created Posix thread TASK_RRC_GNB
+[GTPU]   Created gtpu instance id: 96
+[ITTI]   Created Posix thread TASK_GTPV1_U
 [SCTP]   Received SCTP_INIT_MSG
 [SCTP]   Creating new listen socket on port 30923 with
 [SCTP]   ipv4 addresses:
 [SCTP]   	- 192.168.130.83
-[PHY]   not found same deltaf_raster == scs_khz, use only band and last deltaf_raster 
-[NR_MAC]   NR band duplex spacing is -400000 KHz (nr_bandtable[28].band = 66)
-[NR_MAC]   NR band 66, duplex mode FDD, duplex spacing = -400000 KHz
-[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Checking release 
-[NR_RRC]   do_SIB23_NR, size 9 
- [NR_RRC]   Done init_NR_SI
-[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] gNB:OPENAIR NR RRC IN....
-[GTPU]   Initializing UDP for local address 192.168.237.129 with port 2152
-[ITTI]   Created Posix thread TASK_GTPV1_U
-[GTPU]   Created gtpu instance id: 96
 NFAPI MODE:MONOLITHIC
 START MAIN THREADS
 RC.nb_nr_L1_inst:0
@@ -194,7 +198,7 @@ Entering ITTI signals handler
 [SCTP]   Found data for descriptor 95
 [SCTP]   ----------------------
 [SCTP]   SCTP Status:
-[SCTP]   assoc id .....: 86
+[SCTP]   assoc id .....: 439
 [SCTP]   state ........: 4
 [SCTP]   instrms ......: 10
 [SCTP]   outstrms .....: 32
@@ -212,13 +216,15 @@ Entering ITTI signals handler
 [SCTP]   Found data for descriptor 97
 [SCTP]   Received notification for sd 97, type 32769
 [SCTP]   Client association changed: 0
+[F1AP]   CU Task Received SCTP_NEW_ASSOCIATION_IND for instance 0
 [SCTP]   ----------------------
 [SCTP]   Peer addresses:
+[GTPU]   Initializing UDP for local address 192.168.130.83 with port 39002
 [SCTP]       - [::ffff:192.168.130.81]
 [SCTP]   ----------------------
 [SCTP]   ----------------------
 [SCTP]   SCTP Status:
-[SCTP]   assoc id .....: 86
+[SCTP]   assoc id .....: 439
 [SCTP]   state ........: 4
 [SCTP]   instrms ......: 10
 [SCTP]   outstrms .....: 32
@@ -233,14 +239,12 @@ Entering ITTI signals handler
 [SCTP]       rto ......: 3000
 [SCTP]       mtu ......: 65532
 [SCTP]   ----------------------
-[SCTP]   Comm up notified for sd 97, assigned assoc_id 86
-[F1AP]   CU Task Received SCTP_NEW_ASSOCIATION_IND for instance 0
-[GTPU]   Initializing UDP for local address 192.168.130.83 with port 39002
+[SCTP]   Comm up notified for sd 97, assigned assoc_id 439
 [GTPU]   Created gtpu instance id: 98
 [F1AP]   CU Task Received SCTP_NEW_ASSOCIATION_RESP for instance 0
 [SCTP]   Found data for descriptor 97
 [SCTP]   Received data from peer with unsollicited PPID 0, expecting 62
-[SCTP]   [86][97] Msg of length 217 received, on stream 0, PPID 0
+[SCTP]   [439][97] Msg of length 217 received, on stream 0, PPID 0
 [F1AP]   CU Task Received SCTP_DATA_IND for Instance 0
 ==================LENGTH = 217==================
 [F1AP]   ----------------- ASN1 DECODER PRINT START----------------- 
@@ -394,13 +398,13 @@ Entering ITTI signals handler
 [F1AP]   req->gNB_DU_name ORAN_OAM_DU 
 [F1AP]   req->num_cells_available 1 
 [F1AP]   req->tac[0] 0 
-[F1AP]   [SCTP 86] Received nRCGI: MCC 466, MNC 920, CELL_ID 1
+[F1AP]   [SCTP 439] Received nRCGI: MCC 466, MNC 920, CELL_ID 1
 [F1AP]   req->nr_pci[0] 1 
 [F1AP]   Received Cell in 1 context
 [F1AP]   req->mib[0] len = 3 
 [F1AP]   req->sib1[0] len = 98 
 [NR_RRC]   Received message F1AP_SETUP_REQ
-[NR_RRC]   [gNB 0] Received F1AP_SETUP_REQ : 0x7fa34c002ef0
+[NR_RRC]   [gNB 0] Received F1AP_SETUP_REQ : 0x7f9684002ef0
 [NR_RRC]   Received F1 Setup Request from gNB_DU 1 (ORAN_OAM_DU)
 [NR_RRC]   instance 0 mib length 3
 [NR_RRC]   instance 0 sib1 length 98
@@ -643,11 +647,19 @@ Entering ITTI signals handler
 </F1AP-PDU>
 [F1AP]   ----------------- ASN1 ENCODER PRINT END----------------- 
 [F1AP]   Sending ITTI message to SCTP Task
-[SCTP]   Successfully sent 54 bytes on stream 0 for assoc_id 86
+[SCTP]   Successfully sent 54 bytes on stream 0 for assoc_id 439
 [SCTP]   Found data for descriptor 97
 [SCTP]   Received notification for sd 97, type 32773
 [SCTP]   Received SCTP SHUTDOWN EVENT
 [F1AP]   CU Task Received SCTP_NEW_ASSOCIATION_RESP for instance 0
 [F1AP]   Received unsuccessful result for SCTP association (1), instance 0, cnx_id 0
-^C
+[SCTP]   Found data for descriptor 94
+[SCTP]   Received notification for sd 94, type 32769
+[SCTP]   Client association changed: 4
+[SCTP]   SCTP_ASSOC_CHANGE to SCTP_CANT_STR_ASSOC
+[SCTP]   Found data for descriptor 94
+[SCTP]   Received not connected for sd 94
+[SCTP]   sctp_recvmsg (fd 94, len -1 ): Connection refused:111
+[NGAP]   Received unsuccessful result for SCTP association (3), instance 0, cnx_id 1
+[GNB_APP]   [gNB 0] Received NGAP_REGISTER_GNB_CNF: associated AMF 0
 

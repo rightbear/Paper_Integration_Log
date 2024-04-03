@@ -16,6 +16,10 @@ sh: 1: cannot create /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq: Dire
 sh: 1: cannot create /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq: Directory nonexistent
 sh: 1: cannot create /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq: Directory nonexistent
 sh: 1: cannot create /sys/devices/system/cpu/cpu3/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu5/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq: Directory nonexistent
+sh: 1: cannot create /sys/devices/system/cpu/cpu7/cpufreq/scaling_min_freq: Directory nonexistent
 [HW]   Can't set cpu frequency
 Reading in command-line options
 [LIBCONFIG] (root): 36/36 parameters successfully set, (32 to default value)
@@ -30,7 +34,7 @@ Reading in command-line options
 Configuration: nb_rrc_inst 1, nb_nr_L1_inst 1, nb_ru 1
 [LIBCONFIG] TTracer: 4/4 parameters successfully set, (4 to default value)
 configuring for RAU/RRU
-CPU Freq is 3.408096 
+CPU Freq is 3.409177 
 [ITTI]   Starting itti queue: TASK_UNKNOWN as task 0
 [ITTI]   Starting itti queue: TASK_TIMER as task 1
 [ITTI]   Starting itti queue: TASK_L2L1 as task 2
@@ -79,13 +83,13 @@ CPU Freq is 3.408096
 [ITTI]   Starting itti queue: TASK_NAS_NRUE as task 45
 [LIBCONFIG] opt: 3/3 parameters successfully set, (3 to default value)
 [OPT]   OPT disabled
-[HW]   Version: Branch: YC_develop Abrev. Hash: 61312ca6e2 Date: Fri Aug 12 05:33:12 2022 +0000
+[HW]   Version: Branch: main Abrev. Hash: 58d5c3c Date: Tue Apr 2 04:58:22 2024 -0700
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (18 to default value)
 [NR_PHY]   PRB blacklist 
-[NR_PHY]   RC.gNB = 0x55618ab1ae20
+[NR_PHY]   RC.gNB = 0x55b90a732e20
 [LIBCONFIG] L1s.[0]: 15/15 parameters successfully set, (6 to default value)
-[NR_PHY]   RC.gNB[0] = 0x7fc0196dc010
+[NR_PHY]   RC.gNB[0] = 0x7fcb766c6010
 [NR_PHY]   Copying 0 blacklisted PRB to L1 context
 [PHY]   RCconfig_NR_L1() NFAPI PNF mode - RC.nb_nr_inst=1 this is because phy_init_RU() uses that to index and not RC.num_gNB - why the 2 similar variables?
 [PHY]   RCconfig_NR_L1() NFAPI PNF mode - RC.nb_nr_CC[0]=1 for init_gNB_afterRU()
@@ -101,7 +105,7 @@ configure_nr_nfapi_pnf() VNF:127.0.0.1:62324 PNF_PHY[addr:127.0.0.2 UDP:tx_addr:
 Initializing northbound interface for L1
 [PHY]   l1_north_init_gNB() RC.nb_nr_L1_inst:1
 [PHY]   Installing callbacks for IF_Module - UL_indication
-[MAC]   Allocating shared L1/L2 interface structure for instance 0 @ 0x55618ab1f820
+[MAC]   Allocating shared L1/L2 interface structure for instance 0 @ 0x55b90a737820
 [PHY]   l1_north_init_gNB() RC.gNB[0] installing callbacks
 
  Read message unpack:  0  0  1  0  0  8  0  0 
@@ -111,6 +115,11 @@ Initializing northbound interface for L1
 [PNF] pnf config request
 [PNF] pnf config request assigned phy_id 1 to phy_config_index 0
 [PNF] Sent pnf_config_resp
+[ITTI]   Created Posix thread TASK_SCTP
+[LIBCONFIG] eNBs.[0]: 1/1 parameters successfully set, (1 to default value)
+[LIBCONFIG] gNBs.[0]: 1/1 parameters successfully set, (1 to default value)
+[X2AP]   X2AP is disabled.
+[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
 
  Read message unpack:  0  0  1  4  0  8  0  0 
 Received NFAPI_PNF_START_REQUEST
@@ -123,12 +132,7 @@ RUNNING pack_param_response
 [PNF] Sent NFAPI_PNF_PARAM_RESPONSE phy_id:1 number_of_tlvs:62
 [PNF] param request .. exit
 
-[ITTI]   Created Posix thread TASK_SCTP
- Read message unpack:  0  1  0  2  2  236  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  34  16  1  0  2  0  20  16  2  0  4  0  33  24  248  16  4  0  2  0  106  16  5  0  2  0  1  16  6  0  2  0  20  16  7  0  4 [LIBCONFIG] eNBs.[0]: 1/1 parameters successfully set, (1 to default value)
-[LIBCONFIG] gNBs.[0]: 1/1 parameters successfully set, (1 to default value)
-[X2AP]   X2AP is disabled.
- 0  26  254  120  16  9  0  2  0  106  16  10  0  2  0  1  16  12  0  2  0  1  16  13  0  1  0  16  14  0  4  0  0  0  0  16  16  0  1  1  16  18  0  1  30  16  19  0  1  0  16  20  0  1  1  16  41  0  1  88  16  21  0  2  0  0  16  23  0  2  0  0  16  24  0  1  4  16  27  0  1  1  16  29  0  2  0  24  16  31  0  1  2  16  32  0  1  0  16  33  0  4  0  0  6  0  16  34  0  4  0  0  0  1  1  0  0  4  127  0  0  1  1  2  0  2  197  179  1  31  0  1  3  1  32  0  1  10  1  30  0  1  30 
-[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
+ Read message unpack:  0  1  0  2  2  236  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  0  2  2  2  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  34  16  1  0  2  0  20  16  2  0  4  0  33  24  248  16  4  0  2  0  106  16  5  0  2  0  1  16  6  0  2  0  20  16  7  0  4  0  26  254  120  16  9  0  2  0  106  16  10  0  2  0  1  16  12  0  2  0  1  16  13  0  1  0  16  14  0  4  0  0  0  0  16  16  0  1  1  16  18  0  1  30  16  19  0  1  0  16  20  0  1  1  16  41  0  1  88  16  21  0  2  0  0  16  23  0  2  0  0  16  24  0  1  4  16  27  0  1  1  16  29  0  2  0  24  16  31  0  1  2  16  32  0  1  0  16  33  0  4  0  0  6  0  16  34  0  4  0  0  0  1  1  0  0  4  127  0  0  1  1  2  0  2  197  179  1  31  0  1  3  1  32  0  1  10  1  30  0  1  30 
 [PNF] Received NFAPI_CONFIG_REQ phy_id:1
 
 Timing window tag: 286
@@ -231,13 +235,13 @@ DL frequency 2188160000: band 66, UL frequency 1788160000
 [PNF] P7 remote:127.0.0.1:50611 local:127.0.0.2:32123
 subframe_buffer_size configured using phy_info->timing_window:30
 [PNF] Sending PNF_START_RESP
-Sending NFAPI_START_RESPONSE config:0x55618ab1d5a0 phy_id:1
+Sending NFAPI_START_RESPONSE config:0x55b90a7355a0 phy_id:1
+[NGAP]   Starting NGAP layer
 [PHY]   l1_north_init_gNB() RC.nb_nr_L1_inst:1
+[ITTI]   Created Posix thread TASK_NGAP
 [PHY]   Installing callbacks for IF_Module - UL_indication
 [PHY]   l1_north_init_gNB() RC.gNB[0] installing callbacks
 Calling sched_setscheduler(79)
-[NGAP]   Starting NGAP layer
-[ITTI]   Created Posix thread TASK_NGAP
 [PHY]   gNB_app_task() Task ready initialize structures
 [ITTI]   Created Posix thread TASK_GNB_APP
 [NR_RRC]   Creating NR RRC gNB Task
@@ -265,11 +269,11 @@ Initializing northbound interface for L1
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (18 to default value)
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (18 to default value)
-[LIBCONFIG] MACRLCs.[0]: 33/33 parameters successfully set, (26 to default value)
-[MAC]   [MAIN] Init function start:nb_nr_macrlc_inst=1
 
  Read message unpack:  0  0  1  0  0  8  0  0 
 [PNF] pnf param request
+[LIBCONFIG] MACRLCs.[0]: 33/33 parameters successfully set, (26 to default value)
+[MAC]   [MAIN] Init function start:nb_nr_macrlc_inst=1
 
  Read message unpack:  0  0  1  2  0  26  0  0  16  3  0  14  0  2  0  2  0  0  0  0  0  0  0  0  0  0 
 [PNF] pnf config request
@@ -286,6 +290,8 @@ TAG value :2
 RUNNING pack_param_response
 [PNF] Sent NFAPI_PNF_PARAM_RESPONSE phy_id:2 number_of_tlvs:62
 [PNF] param request .. exit
+[NR_RRC]   Entering main loop of NR_RRC message task
+[ITTI]   Created Posix thread TASK_RRC_GNB
 [PHY]   Installing callbacks for IF_Module - UL_indication
 [NR_MAC]   PUSCH Target 150, PUCCH Target 200, PUCCH Failure 10, PUSCH Failure 10
 [PHY]   gNB_app_task() RC.nb_nr_L1_inst:1
@@ -293,8 +299,8 @@ RUNNING pack_param_response
 [PHY]   Installing callbacks for IF_Module - UL_indication
 [PHY]   l1_north_init_gNB() RC.gNB[0] installing callbacks
 [GNB_APP]   Allocating gNB_RRC_INST for 1 instances
-[PHY]   gNB_app_task() RC.nb_nr_inst:1 RC.nrrrc:0x7fc00800cdf0
-[PHY]   gNB_app_task() Creating RRC instance RC.nrrrc[0]:0x7fc00800ce10 (1 of 1)
+[PHY]   gNB_app_task() RC.nb_nr_inst:1 RC.nrrrc:0x7fcb6400cdf0
+[PHY]   gNB_app_task() Creating RRC instance RC.nrrrc[0]:0x7fcb6400ce10 (1 of 1)
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (18 to default value)
 [LIBCONFIG] gNBs.[0].pdcch_ConfigSIB1.[0]: 2/2 parameters successfully set, (0 to default value)
@@ -331,40 +337,26 @@ NRRRC 0: Southbound Transport local_mac
 [GNB_APP]   RRC starting with node type 2
 [GNB_APP]   Sending configuration message to NR_RRC task
 [PDCP]   pdcp init,usegtp 
+[NR_RRC]   Received message NRRRC_CONFIGURATION_REQ
 [LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
+[NR_RRC]   [gNB 0] Received NRRRC_CONFIGURATION_REQ : 0x7fcb6400e4f0
+[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Init...
 [LIBCONFIG] gNBs.[0]: 27/27 parameters successfully set, (18 to default value)
 [LIBCONFIG] gNBs.[0].plmn_list.[0]: 3/3 parameters successfully set, (0 to default value)
-[LIBCONFIG] gNBs.[0].plmn_list.[0].snssaiList.[0]: 2/2 parameters successfully set, (0 to default value)
-[LIBCONFIG] gNBs.[0].amf_ip_address.[0]: 4/4 parameters successfully set, (0 to default value)
-[LIBCONFIG] gNBs.[0].SCTP: 2/2 parameters successfully set, (0 to default value)
-[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
-[GNB_APP]   default drx 0
-[GTPU]   Configuring GTPu
-[LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
-[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
-[GTPU]   SA mode 
-[GTPU]   Configuring GTPu address : 192.168.70.129 -> 8146a8c0
-[GNB_APP]   [gNB 0] gNB_app_register for instance 0
-[NGAP]   Registered new gNB[0] and macro gNB id 3584
-[NGAP]   [gNB 0] check the amf registration state
-[SCTP]   SCTP_ASSOC_CHANGE to SCTP_CANT_STR_ASSOC
-[SCTP]   sctp_recvmsg (fd 102, len -1 ): Protocol not available:92
-[NR_RRC]   Entering main loop of NR_RRC message task
-[NR_RRC]   Received message NRRRC_CONFIGURATION_REQ
-[NR_RRC]   [gNB 0] Received NRRRC_CONFIGURATION_REQ : 0x7fc00800e4f0
-[NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Init...
-[ITTI]   Created Posix thread TASK_RRC_GNB
 [NR_MAC]   NR band duplex spacing is 0 KHz (nr_bandtable[37].band = 78)
 [NR_MAC]   NR band 78, duplex mode TDD, duplex spacing = 0 KHz
+[LIBCONFIG] gNBs.[0].plmn_list.[0].snssaiList.[0]: 2/2 parameters successfully set, (0 to default value)
 [NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] Checking release 
 [NR_RRC]   SIB1 freq: absoluteFrequencySSB 641280, absoluteFrequencyPointA 640008
 [NR_RRC]   SIB1 freq: absolute_diff 1272, 2*(absolute_diff/(12*2) - 10) 86
+[LIBCONFIG] gNBs.[0].amf_ip_address.[0]: 4/4 parameters successfully set, (0 to default value)
 <SIB1>
     <cellSelectionInfo>
         <q-RxLevMin>-65</q-RxLevMin>
     </cellSelectionInfo>
     <cellAccessRelatedInfo>
-        <plmn-IdentityList>
+        <plmn-IdentityList>[LIBCONFIG] gNBs.[0].SCTP: 2/2 parameters successfully set, (0 to default value)
+
             <PLMN-IdentityInfo>
                 <plmn-IdentityList>
                     <PLMN-Identity>
@@ -377,6 +369,8 @@ NRRRC 0: Southbound Transport local_mac
                             <MCC-MNC-Digit>9</MCC-MNC-Digit>
                             <MCC-MNC-Digit>2</MCC-MNC-Digit>
                             <MCC-MNC-Digit>0</MCC-MNC-Digit>
+[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
+[GNB_APP]   default drx 0
                         </mnc>
                     </PLMN-Identity>
                 </plmn-IdentityList>
@@ -386,7 +380,9 @@ NRRRC 0: Southbound Transport local_mac
                 <cellIdentity>
                     000000000000000000000000111000000000
                 </cellIdentity>
+[GTPU]   Configuring GTPu
                 <cellReservedForOperatorUse><notReserved/></cellReservedForOperatorUse>
+[LIBCONFIG] (root): 2/2 parameters successfully set, (0 to default value)
             </PLMN-IdentityInfo>
         </plmn-IdentityList>
     </cellAccessRelatedInfo>
@@ -394,12 +390,18 @@ NRRRC 0: Southbound Transport local_mac
         <downlinkConfigCommon>
             <frequencyInfoDL>
                 <frequencyBandList>
+[NGAP]   Registered new gNB[0] and macro gNB id 3584
+[LIBCONFIG] gNBs.[0].NETWORK_INTERFACES: 10/10 parameters successfully set, (3 to default value)
+[NGAP]   [gNB 0] check the amf registration state
+[GTPU]   SA mode 
                     <NR-MultiBandInfo>
                         <freqBandIndicatorNR>78</freqBandIndicatorNR>
+[GTPU]   Configuring GTPu address : 192.168.237.129 -> 81eda8c0
                     </NR-MultiBandInfo>
                 </frequencyBandList>
                 <offsetToPointA>86</offsetToPointA>
                 <scs-SpecificCarrierList>
+[GNB_APP]   [gNB 0] gNB_app_register for instance 0
                     <SCS-SpecificCarrier>
                         <offsetToCarrier>0</offsetToCarrier>
                         <subcarrierSpacing><kHz30/></subcarrierSpacing>
@@ -672,10 +674,10 @@ DL frequency 3619200000: band 48, UL frequency 3619200000
 [NR_MAC]   In rrc_mac_config_req_gNB: slot 18 DL 0 UL 1
 [NR_MAC]   In rrc_mac_config_req_gNB: slot 19 DL 0 UL 1
 [NR_RRC]   [FRAME 00000][gNB][MOD 00][RNTI 0] gNB:OPENAIR NR RRC IN....
-[GTPU]   Initializing UDP for local address 192.168.70.129 with port 2152
 [ITTI]   Created Posix thread TASK_GTPV1_U
-[GTPU]   bind: Cannot assign requested address
-[GTPU]   failed to bind socket: 192.168.70.129 2152 
+[GTPU]   Initializing UDP for local address 192.168.237.129 with port 2152
+[GTPU]   bind: Address already in use
+[GTPU]   failed to bind socket: 192.168.237.129 2152 
 [GTPU]   can't create GTP-U instance
 [GTPU]   Created gtpu instance id: -1
 NFAPI*** - mutex and cond created - will block shortly for completion of PNF connection
@@ -685,9 +687,9 @@ RC.nb_nr_L1_inst:1
 Initializing gNB threads single_thread_flag:1 wait_for_sync:0
 [PHY]   Initializing gNB 0 single_thread_flag:1
 [PHY]   Initializing gNB 0
-[PHY]   Registering with MAC interface module (before 0x55618ab1f820)
+[PHY]   Registering with MAC interface module (before 0x55b90a737820)
 [PHY]   Installing callbacks for IF_Module - UL_indication
-[PHY]   Registering with MAC interface module (after 0x55618ab1f820)
+[PHY]   Registering with MAC interface module (after 0x55b90a737820)
 [PHY]   Setting indication lists
 [PHY]   [nr-gnb.c] gNB structure allocated
 wait_gNBs()
@@ -698,15 +700,15 @@ Initializing RU threads
 configuring RU from file
 [LIBCONFIG] RUs.[0]: 33/33 parameters successfully set, (25 to default value)
 Set RU mask to 1
-Creating RC.ru[0]:0x55618ab22100
+Creating RC.ru[0]:0x55b90a73a100
 [PHY]   Setting clock source to internal
 [PHY]   Setting time source to internal
 Setting function for RU 0 to gNodeB_3GPP
 [RU 0] Setting nr_flag 0, nr_band 7, nr_scs_for_raster 1
-[PHY]   number of L1 instances 1, number of RU 1, number of CPU cores 4
+[PHY]   number of L1 instances 1, number of RU 1, number of CPU cores 8
 [PHY]   DJP - delete code above this /home/test/OAI_L1/openairinterface5g/executables/nr-ru.c:1733
 [PHY]   Copying frame parms from gNB in RC to gNB 0 in ru 0 and frame_parms in ru
-configuring ru_id 0 (start_rf 0x556187c9e6f0)
+configuring ru_id 0 (start_rf 0x55b9085836f0)
 [PHY]   Starting ru_thread 0
 [PHY]   Initializing RU proc 0 (,synch_to_ext_device),
 [PHY]   Starting RU 0 (,synch_to_ext_device),
@@ -725,13 +727,13 @@ configuring ru_id 0 (start_rf 0x556187c9e6f0)
 [PHY]   fp->ul_CarrierFreq=3619200000
 [PHY]   Channel 0: setting tx_gain offset 90, rx_gain offset 125, tx_freq 3619200000 Hz, rx_freq 3619200000 Hz, tune_offset 0 Hz
 [PHY]   Initializing RU signal buffers (if_south local RF) nb_tx 1, nb_rx 1
-[PHY]   [INIT] common.txdata[0] = 0x7fc0141b4040 (1844480 bytes,sf_extension 320)
-[PHY]   [INIT] common.txdata[0] = 0x7fc0141b4540 
+[PHY]   [INIT] common.txdata[0] = 0x7fcb7019c040 (1844480 bytes,sf_extension 320)
+[PHY]   [INIT] common.txdata[0] = 0x7fcb7019c540 
 [PHY]   nb_tx 1
-[PHY]   rxdata_7_5kHz[0] 0x7fc0140ff040 for RU 0
-[PHY]   [INIT] common.txdata_BF= 0x7fbfe8000b00 (8 bytes)
-[PHY]   txdataF_BF[0] 0x7fc0196b1040 for RU 0
-[PHY]   rxdataF[0] 0x7fc0140aa040 for RU 0
+[PHY]   rxdata_7_5kHz[0] 0x7fcb700e7040 for RU 0
+[PHY]   [INIT] common.txdata_BF= 0x7fcb44000b00 (8 bytes)
+[PHY]   txdataF_BF[0] 0x7fcb7669b040 for RU 0
+[PHY]   rxdataF[0] 0x7fcb70092040 for RU 0
 [PHY]   [INIT] nr_phy_init_RU() ru->num_gNB:1 
 [LIBCONFIG] device.recplay: 8/8 parameters successfully set, (8 to default value)
 [LIBCONFIG] device: 1/1 parameters successfully set, (1 to default value)
@@ -742,11 +744,11 @@ shlib_path liboai_device.so
 [HW]   openair0_cfg[0].sdr_addrs == '(null)'
 [HW]   openair0_cfg[0].clock_source == '0' (internal = 0, external = 1)
 [HW]   UHD version 4.6.0.0-0ubuntu1~bionic1 (4.6.0)
-[INFO] [UHD] linux; GNU C++ version 7.5.0; Boost_106501; UHD_4.6.0.0-0ubuntu1~bionic1
-[HW]   Found USRP b200
 [PHY]   init feptx thread 0
+[INFO] [UHD] linux; GNU C++ version 7.5.0; Boost_106501; UHD_4.6.0.0-0ubuntu1~bionic1
 [PHY]   init feptx thread 1
 waiting for NFAPI PNF connection and population of global structure (main?)
+[HW]   Found USRP b200
 [INFO] [B200] Detected Device: B210
 [INFO] [B200] Operating over USB 3.
 [INFO] [B200] Initialize CODEC control...
@@ -789,17 +791,17 @@ waiting for NFAPI PNF connection and population of global structure (main?)
 [HW]     Actual TX bandwidth: 40.000000M...
 [HW]     Actual TX antenna: TX/RX...
 [HW]     Actual TX packet size: 1916
-[HW]   Device timestamp: 3.339632...
+[HW]   Device timestamp: 2.955584...
 [HW]   [RAU] has loaded USRP B200 device.
-setup_RU_buffers: frame_parms = 0x55618ab259d0
+setup_RU_buffers: frame_parms = 0x55b90a73d9d0
 [PHY]   RU 0 Setting N_TA_offset to 600 samples (factor 1.500000, UL Freq 3600120, N_RB 106, mu 1)
 [PHY]   Signaling main thread that RU 0 is ready, sl_ahead 6
-waiting for sync (ru_thread,-1/0x5561888f52b4,0x5561896a6700,0x5561894fb7e0)
+waiting for sync (ru_thread,-1/0x55b9091da2b4,0x55b909f8b700,0x55b909de07e0)
 [PNF] waiting for OAI to be configured (eNB/RU)
 [PNF] OAI eNB/RU configured
 [PNF] About to call init_eNB_afterRU()
 [PHY]   init_eNB_afterRU() RC.nb_nr_inst:1
-[PHY]   RC.nb_nr_CC[inst:0]:0x7fc0196dc010
+[PHY]   RC.nb_nr_CC[inst:0]:0x7fcb766c6010
 [PHY]   [gNB 0] phy_init_nr_gNB() About to wait for gNB to be configured
 [LIBCONFIG] loader.dfts: 2/2 parameters successfully set, (1 to default value)
 shlib_path libdfts.so
@@ -851,7 +853,7 @@ shlib_path libldpc.so
 [PHY]   Mapping RX ports from 1 RUs to gNB 0
 [PHY]   gNB->num_RU:1
 [PHY]   Attaching RU 0 antenna 0 to gNB antenna 0
-[PHY]   Number of threads requested in config file: 4, Number of threads available on this machine: 4
+[PHY]   Number of threads requested in config file: 4, Number of threads available on this machine: 8
 create a thread for core -1
 create a thread for core -1
 create a thread for core -1
@@ -872,7 +874,7 @@ create a thread for core -1
 [PHY]   Allocating Transport Channel Buffers for DLSCH 5/8
 [PHY]   Allocating Transport Channel Buffers for DLSCH 6/8
 [PHY]   Allocating Transport Channel Buffers for DLSCH 7/8
-waiting for sync (L1_stats_thread,-1/0x5561888f52b4,0x5561896a6700,0x5561894fb7e0)
+waiting for sync (L1_stats_thread,-1/0x55b9091da2b4,0x55b909f8b700,0x55b909de07e0)
 NFAPI: got sync (main?)
 wait RUs
 [PHY]   Waiting for RUs to be configured ... RC.ru_mask:00
@@ -883,9 +885,9 @@ ALL RUs ready - init gNBs
 NFAPI mode - DO NOT call init_gNB_afterRU()
 ALL RUs ready - ALL gNBs ready
 Sending sync to all threads
-got sync (L1_stats_thread)
-got sync (ru_thread)
 About to call end_configmodule() from main() /home/test/OAI_L1/openairinterface5g/executables/nr-softmodem.c:790
+got sync (ru_thread)
+got sync (L1_stats_thread)
 Called end_configmodule() from main() /home/test/OAI_L1/openairinterface5g/executables/nr-softmodem.c:795
 TYPE <CTRL-C> TO TERMINATE
 Entering ITTI signals handler
@@ -904,8 +906,8 @@ sleep...
 [MWNL] pnf_p7_slot_ind
 [MWNL]  NR_UL_indication
 [NFAPI PNF P7] p7_msg_sfn  : 0, p7_msg_slot: 3
-[NFAPI PNF P7] phy_sfn     : 0, phy_slot   : 7
-[NFAPI PNF P7] The current_sfn_slot_dec : 7 <= recv_sfn_slot_dec + timing_window: 33
+[NFAPI PNF P7] phy_sfn     : 0, phy_slot   : 9
+[NFAPI PNF P7] The current_sfn_slot_dec : 9 <= recv_sfn_slot_dec + timing_window: 33
 [NFAPI PNF] number of pdu is 0
 [MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 1
 [MWNL] pnf_p7_slot_ind
@@ -915,30 +917,22 @@ sleep...
 [NFAPI PNF P7] The current_sfn_slot_dec : 8 <= recv_sfn_slot_dec + timing_window: 33
 [NFAPI PNF] number of pdu is 0
 [MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 2
-L[MWNL] pnf_p7_slot_ind
-[MWNL]  NR_UL_indication
-LL[MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 3
 [MWNL] pnf_p7_slot_ind
 [MWNL]  NR_UL_indication
-LLslot: 0, expected slot: 1
-[PHY]   error, pull two msg, none is good
-L[MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 4
-[MWNL] pnf_p7_slot_ind
-[MWNL]  NR_UL_indication
-LLLLLLLLLLLLLL[PHY]   order mistake
-[mwnl test] im alive
-LLLLL[NFAPI PNF P7] p7_msg_sfn  : 0, p7_msg_slot: 3
-[NFAPI PNF P7] phy_sfn     : 1, phy_slot   : 1
-[NFAPI PNF P7] The current_sfn_slot_dec : 21 <= recv_sfn_slot_dec + timing_window: 33
-[NFAPI PNF] number of pdu is 0
 [NFAPI PNF P7] p7_msg_sfn  : 0, p7_msg_slot: 3
-[NFAPI PNF P7] phy_sfn     : 1, phy_slot   : 1
-[NFAPI PNF P7] The current_sfn_slot_dec : 21 <= recv_sfn_slot_dec + timing_window: 33
+[NFAPI PNF P7] phy_sfn     : 0, phy_slot   : 9
+[NFAPI PNF P7] The current_sfn_slot_dec : 9 <= recv_sfn_slot_dec + timing_window: 33
 [NFAPI PNF] number of pdu is 0
-L[MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 5
-L[MWNL] pnf_p7_slot_ind
+[MAC]   [GNB]  the NFAPI_MODE_PNF in rx_func is about to send slot_ind sfn : 0, slot : 3
+[MWNL] pnf_p7_slot_ind
 [MWNL]  NR_UL_indication
-LLLslot: 9, expected slot: 10
-LLLLLLLLL[PNF] waiting for OAI to be started
+slot: 0, expected slot: 1
+[PHY]   error, pull two msg, none is good
+[NFAPI PNF P7] p7_msg_sfn  : 0, p7_msg_slot: 3
+[NFAPI PNF P7] phy_sfn     : 0, phy_slot   : 9
+[NFAPI PNF P7] The current_sfn_slot_dec : 9 <= recv_sfn_slot_dec + timing_window: 33
+[NFAPI PNF] number of pdu is 0
+[PHY]   order mistake
+LLLLLLLLLLLLLLLLLLLLLLLLLL[PNF] waiting for OAI to be started
 ^C
 
